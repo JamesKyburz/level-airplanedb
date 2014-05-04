@@ -1,0 +1,28 @@
+{
+  "sync": true,
+  "range": {"start": "foo1", "end": "foo4\xff"},
+  "localSetup": [
+    {"type": "put", "key": "foo1", "value": {"bar": 1}},
+    {"type": "put", "key": "foo2", "value": {"bar": 2}},
+    {"type": "put", "key": "foo3", "value": {"bar": 3}},
+    {"type": "put", "key": "foo4", "value": {"bar": 4}},
+    {"type": "del", "key": "foo4"}
+  ],
+  "remoteSetup": [],
+  "assertChangelog": [
+    {"key": "foo1", "value": {"type": "put", "value": {"bar": 1}}},
+    {"key": "foo2", "value": {"type": "put", "value": {"bar": 2}}},
+    {"key": "foo3", "value": {"type": "put", "value": {"bar": 3}}},
+    {"key": "foo4", "value": {"type": "del"}}
+  ],
+  "assertLocalDb": [
+    {"key": "foo1", "value": {"bar": 1}},
+    {"key": "foo2", "value": {"bar": 2}},
+    {"key": "foo3", "value": {"bar": 3}}
+  ],
+  "assertRemoteDb": [
+    {"key": "foo1", "value": {"bar": 1}},
+    {"key": "foo2", "value": {"bar": 2}},
+    {"key": "foo3", "value": {"bar": 3}}
+  ]
+}

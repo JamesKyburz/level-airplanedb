@@ -1,0 +1,21 @@
+{
+  "sync": true,
+  "range": {"start": "db31", "end": "db3\xff"},
+  "localSetup": [],
+  "remoteSetup": [
+    {"type": "put", "key": "db31", "value": 4},
+    {"type": "put", "key": "db32", "value": 5},
+    {"type": "put", "key": "db33", "value": 6}
+  ],
+  "assertChangelog": [],
+  "assertLocalDb": [
+    {"key": "db31", "value": 4},
+    {"key": "db32", "value": 5},
+    {"key": "db33", "value": 6}
+  ],
+  "assertRemoteDb": [
+    {"key": "db31", "value": 4},
+    {"key": "db32", "value": 5},
+    {"key": "db33", "value": 6}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sync": true,
+  "range": {"start": "foo1", "end": "foo4\xff"},
+  "localSetup": [],
+  "remoteSetup": [],
+  "assertChangelog": [],
+  "assertLocalDb": [
+    {"key": "foo1", "value": {"bar": 1}},
+    {"key": "foo2", "value": {"bar": 2}},
+    {"key": "foo3", "value": {"bar": 3}}
+  ],
+  "assertRemoteDb": [
+    {"key": "foo1", "value": {"bar": 1}},
+    {"key": "foo2", "value": {"bar": 2}},
+    {"key": "foo3", "value": {"bar": 3}}
+  ]
+}

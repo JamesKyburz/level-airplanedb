@@ -1,0 +1,9 @@
+{
+  "sync": true,
+  "range": {"start": "zzz", "end": "zzz\xff"},
+  "localSetup": [],
+  "remoteSetup": [],
+  "assertChangelog": [],
+  "assertLocalDb": [],
+  "assertRemoteDb": []
+}

@@ -1,0 +1,22 @@
+{
+  "sync": true,
+  "range": {"start": "foo5", "end": "foo6\xff"},
+  "localSetup": [
+    {"type": "put", "key": "foo5", "value": 42}
+  ],
+  "remoteSetup": [
+    {"type": "put", "key": "foo5", "value": 43},
+    {"type": "put", "key": "foo6", "value": 43}
+  ],
+  "assertChangelog": [
+    {"key": "foo5", "value": {"type": "put", "value": 42}}
+  ],
+  "assertLocalDb": [
+    {"key": "foo5", "value": 42},
+    {"key": "foo6", "value": 43}
+  ],
+  "assertRemoteDb": [
+    {"key": "foo5", "value": 42},
+    {"key": "foo6", "value": 43}
+  ]
+}

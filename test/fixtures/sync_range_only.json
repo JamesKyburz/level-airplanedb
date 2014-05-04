@@ -1,0 +1,11 @@
+{
+  "sync": true,
+  "range": {"start": "db7", "end": "db7\xff"},
+  "localSetup": [
+    {"type": "put", "key": "db8", "value": 1}
+  ],
+  "remoteSetup": [],
+  "assertChangelog": [],
+  "assertLocalDb": [],
+  "assertRemoteDb": []
+}
