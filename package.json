@@ -1,0 +1,68 @@
+{
+  "name": "airplanedb",
+  "description": "airplanedb",
+  "keywords": [
+    "leveldb",
+    "leveldown",
+    "levelup",
+    "browserify",
+    "offline first",
+    "mobile",
+    "airplane mode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jameskyburz/airplanedb"
+  },
+  "author": {
+    "name": "James Kyburz",
+    "email": "james.kyburz@gmail.com"
+  },
+  "main": "index.js",
+  "browser": "browser.js",
+  "browserify": {
+    "transform": [
+      "bulkify"
+    ]
+  },
+  "version": "0.0.0",
+  "scripts": {
+    "test": "testling | faucet"
+  },
+  "testling": {
+    "server": "testserver.js",
+    "files": "test/*.js",
+    "browsers": [
+      "ie/10..latest",
+      "chrome/20..latest",
+      "firefox/10..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "level-sublevel": "^5.2.0",
+    "monot": "^0.1.2",
+    "map-stream": "~0.1.0",
+    "IndexedDBShim": "git+ssh://github.com:jameskyburz/IndexedDBShim",
+    "level-delete-range": "^0.1.0",
+    "json-stable-stringify": "^0.1.2"
+  },
+  "devDependencies": {
+    "tape": "^2.12.3",
+    "sinon": "^1.9.1",
+    "faucet": "0.0.1",
+    "testling": "^1.6.1",
+    "levelup": "^0.18.3",
+    "shoe": "0.0.15",
+    "multilevel": "^6.0.0",
+    "level-js": "^2.1.3",
+    "leveldown": "^0.10.2",
+    "rimraf": "^2.2.6",
+    "browserify": "^3.44.2",
+    "bulkify": "^1.0.0"
+  }
+}
