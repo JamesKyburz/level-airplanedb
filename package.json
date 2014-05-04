@@ -1,6 +1,6 @@
 {
-  "name": "airplanedb",
-  "description": "airplanedb",
+  "name": "level-airplanedb",
+  "description": "leveldb airplane mode with manual replication",
   "keywords": [
     "leveldb",
     "leveldown",
@@ -8,11 +8,12 @@
     "browserify",
     "offline first",
     "mobile",
+    "replication",
     "airplane mode"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jameskyburz/airplanedb"
+    "url": "git://github.com/jameskyburz/level-airplanedb"
   },
   "author": {
     "name": "James Kyburz",
