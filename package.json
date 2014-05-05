@@ -48,7 +48,7 @@
     "level-sublevel": "^5.2.0",
     "monot": "^0.1.2",
     "map-stream": "~0.1.0",
-    "IndexedDBShim": "git+ssh://github.com:jameskyburz/IndexedDBShim",
+    "IndexedDBShim": "git://github.com/jameskyburz/IndexedDBShim.git#master",
     "level-delete-range": "^0.1.0",
     "json-stable-stringify": "^0.1.2"
   },
