@@ -8,8 +8,8 @@ var Timestamp = monot();
 module.exports = airportdb;
 
 function airportdb(db) {
-  db = sublevel(db);
   if (db.sync) return db;
+  db = sublevel(db);
   var changelog = db.sublevel('changelog');
 
   db.pre(addChange);
@@ -27,9 +27,11 @@ function airportdb(db) {
 
   function cleanup(ch) {
     if ('del' === ch.type) return;
+    var start = ch.key.slice(0, -28) + '0000-00-00T00:00:00.000Z' + ch.key.slice(-4);
+    var end = ch.key.slice(0, -5) + 'A' + ch.key.slice(-4);
     deleteRange(changelog, {
-      start: ch.key.slice(0, -28),
-      end: ch.key.slice(0, -28)
+      start: start,
+      end: end
     });
   }
 
