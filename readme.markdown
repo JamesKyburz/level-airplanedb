@@ -52,7 +52,7 @@ giving me the choice when to sync saving battery usage.
 [level-sublevel](https://github.com/dominictarr/level-sublevel) is used to
 persist the changelog both on client and server.
 
-See test/simple.js for a client server example using :-
+See [test/simple.js](https://github.com/JamesKyburz/level-airplanedb/blob/master/test/simple.js) for a client server example using :-
 
 [multilevel](https://github.com/juliangruber/multilevel) - leveldb over
 network
