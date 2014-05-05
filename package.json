@@ -35,9 +35,9 @@
     "files": "test/*.js",
     "browsers": [
       "ie/10..latest",
-      "firefox/25..nightly",
-      "chrome/30..canary",
-      "opera/17..next",
+      "firefox/25..latest", "firefox/nightly",
+      "chrome/30..latest", "chrome/canary",
+      "opera/17..latest", "opera/next",
       "safari/6.0..latest",
       "iphone/6.0..latest",
       "ipad/6.0..latest",
