@@ -63,8 +63,10 @@ browser
 # Gotchas
 
 This is a work in progress, conflicts are not handled at all!
-
 The client's changelog is what is written to the server.
+
+Updating keys in the same range as a running sync is not supported,
+doing this will incur loss of data.
 
 # install
 
