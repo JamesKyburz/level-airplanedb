@@ -44,6 +44,9 @@
     ]
   },
   "license": "MIT",
+  "engines" : {
+    "node" : ">=0.10"
+  },
   "dependencies": {
     "level-sublevel": "^5.2.0",
     "monot": "^0.1.2",
