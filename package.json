@@ -35,17 +35,18 @@
     "files": "test/*.js",
     "browsers": [
       "ie/10..latest",
-      "chrome/20..latest",
-      "firefox/10..latest",
-      "safari/latest",
-      "opera/11.0..latest",
-      "iphone/6",
-      "ipad/6"
+      "firefox/25..nightly",
+      "chrome/30..canary",
+      "opera/17..next",
+      "safari/6.0..latest",
+      "iphone/6.0..latest",
+      "ipad/6.0..latest",
+      "android-browser/4.2..latest"
     ]
   },
   "license": "MIT",
-  "engines" : {
-    "node" : ">=0.10"
+  "engines": {
+    "node": ">=0.10"
   },
   "dependencies": {
     "level-sublevel": "^5.2.0",
