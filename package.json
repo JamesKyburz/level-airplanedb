@@ -35,12 +35,12 @@
     "files": "test/*.js",
     "browsers": [
       "ie/10..latest",
-      "firefox/25..latest", "firefox/nightly",
-      "chrome/30..latest", "chrome/canary",
-      "opera/17..latest", "opera/next",
-      "safari/6.0..latest",
-      "iphone/6.0..latest",
-      "ipad/6.0..latest",
+      "firefox/17..latest",
+      "chrome/25..latest",
+      "opera/15..latest",
+      "safari/6..latest",
+      "iphone/6..latest",
+      "ipad/6..latest",
       "android-browser/4.2..latest"
     ]
   },
