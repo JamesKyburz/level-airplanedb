@@ -3,6 +3,9 @@ var levelup = require('levelup');
 var leveljs = require('level-js');
 var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json');
 
+
+require('tap-browser-color')();
+
 var shoe = require('shoe');
 var multilevel = require('multilevel');
 var manifest = {

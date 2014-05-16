@@ -35,9 +35,12 @@
     "files": "test/*.js",
     "browsers": [
       "ie/10..latest",
-      "firefox/18..latest", "firefox/nightly",
-      "chrome/25..latest", "chrome/canary",
-      "opera/15..latest", "opera/next",
+      "firefox/18..latest",
+      "firefox/nightly",
+      "chrome/25..latest",
+      "chrome/canary",
+      "opera/15..latest",
+      "opera/next",
       "safari/6..latest",
       "iphone/6..latest",
       "ipad/6..latest",
@@ -58,7 +61,6 @@
   },
   "devDependencies": {
     "tape": "^2.12.3",
-    "sinon": "^1.9.1",
     "faucet": "0.0.1",
     "testling": "^1.6.1",
     "levelup": "^0.18.3",
@@ -68,6 +70,7 @@
     "leveldown": "^0.10.2",
     "rimraf": "^2.2.6",
     "browserify": "^3.44.2",
-    "bulkify": "^1.0.0"
+    "bulkify": "^1.0.0",
+    "tap-browser-color": "^0.1.2"
   }
 }
