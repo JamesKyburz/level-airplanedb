@@ -6,8 +6,6 @@ You get a sync method in browserified client to write to the server.
 The server gets a sync method that returns a readstream of the changelog
 after the given timestamp.
 
-[![testling badge](https://ci.testling.com/JamesKyburz/level-airplanedb.png)](https://ci.testling.com/JamesKyburz/level-airplanedb)
-
 [![build status](https://secure.travis-ci.org/JamesKyburz/level-airplanedb.svg)](http://travis-ci.org/JamesKyburz/level-airplanedb)
 
 # Example client
