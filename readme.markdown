@@ -1,6 +1,6 @@
 # level-airplanedb
 
-This module allows you to work offline in the browser using indexdb.
+This module allows you to work offline in the browser using indexdb (+ shim for websql when indexdb not available).
 
 You get a sync method in browserified client to write to the server.
 The server gets a sync method that returns a readstream of the changelog
