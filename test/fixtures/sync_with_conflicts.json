@@ -9,7 +9,7 @@
     {"type": "put", "key": "foo6", "value": 43}
   ],
   "assertChangelog": [
-    {"key": "foo5", "value": {"type": "put", "value": 42}}
+    {"key": "foo5", "value": {"type": "put"}}
   ],
   "assertLocalDb": [
     {"key": "foo5", "value": 42},

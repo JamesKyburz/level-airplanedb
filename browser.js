@@ -24,7 +24,6 @@ function airportdb(db) {
     add({
       key: ch.key,
       value: {
-        value: ch.value,
         type: ch.type
       },
       type: 'put',
@@ -53,7 +52,10 @@ function airportdb(db) {
       if (item.value.type === 'del') {
         remotedb.del(item.key, done);
       } else {
-        remotedb.put(item.key, item.value.value, done);
+        db.get(item.key, function(err, value) {
+          if (err) return done(err);
+          remotedb.put(item.key, value, done);
+        });
       }
       function done(err) {
         if (err) return cb(err);

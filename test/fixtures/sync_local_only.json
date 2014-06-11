@@ -10,9 +10,9 @@
   ],
   "remoteSetup": [],
   "assertChangelog": [
-    {"key": "foo1", "value": {"type": "put", "value": {"bar": 1}}},
-    {"key": "foo2", "value": {"type": "put", "value": {"bar": 2}}},
-    {"key": "foo3", "value": {"type": "put", "value": {"bar": 3}}},
+    {"key": "foo1", "value": {"type": "put"}},
+    {"key": "foo2", "value": {"type": "put"}},
+    {"key": "foo3", "value": {"type": "put"}},
     {"key": "foo4", "value": {"type": "del"}}
   ],
   "assertLocalDb": [
