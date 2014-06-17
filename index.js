@@ -5,9 +5,9 @@ var deleteRange = require('level-delete-range');
 
 var Timestamp = monot();
 
-module.exports = airportdb;
+module.exports = airplanedb;
 
-function airportdb(db) {
+function airplanedb(db) {
   if (db.sync) return db;
   db = sublevel(db);
   var changelog = db.sublevel('changelog');
