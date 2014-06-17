@@ -10,6 +10,10 @@ module.exports = airplanedb;
 function airplanedb(db) {
   if (db.sync) return db;
   db = sublevel(db);
+
+  db.methods = db.methods || {};
+  db.methods = {sync: {type: 'readable'}};
+
   var changelog = db.sublevel('changelog');
 
   db.pre(addChange);

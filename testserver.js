@@ -13,9 +13,6 @@ rimraf('airplanedb', function() {
   var db = levelup('airplanedb', {valueEncoding: 'json', db: leveldown});
   db = airplanedb(db);
 
-  db.methods = {};
-  db.methods.sync = {'type': 'readable'};
-
   var sock = shoe(function (stream) {
     stream.pipe(multilevel.server(db)).pipe(stream);
   });
