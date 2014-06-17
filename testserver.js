@@ -7,7 +7,7 @@ var rimraf       = require('rimraf');
 var airplanedb   = require('./');
 
 var server = http.createServer();
-server.listen(parseInt(process.env.PORT));
+server.listen(process.env.PORT);
 
 rimraf('airplanedb', function() {
   var db = levelup('airplanedb', {valueEncoding: 'json', db: leveldown});
