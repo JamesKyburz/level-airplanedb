@@ -22,7 +22,7 @@ db = airplanedb(db);
 // sync range
 // any keys in local changelog will be written to the server
 // any keys from remotedb will be synced to client
-db.sync({start: ..., end: ...}, remotedb);
+db.sync({start: ..., end: ...}, remotedb, cb);
 
 // changes to local db will be written to changelog removed when synced.
 ```
