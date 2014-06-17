@@ -20,7 +20,12 @@ var manifest = {
 var db = levelup('airplanedb', {db: leveljs, valueEncoding: 'json'});
 
 // safari sometimes bombs out with OpenError until that's fixed this on error helps
-db.on('error', window.location.reload.bind(window.location));
+db.once('error', function(err) {
+  if (err && 'OpenError' === err.type) {
+    return window.location.reload();
+  }
+  throw err;
+});
 
 db = airplanedb(db);
 var remoteDb = multilevel.client(manifest);
