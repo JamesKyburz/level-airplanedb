@@ -1,13 +1,12 @@
+require('tap-browser-color')();
+
 var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');
 var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json');
-
-
-require('tap-browser-color')();
-
-var shoe = require('shoe');
+var Engine = require('engine.io-stream');
 var multilevel = require('multilevel');
+
 var manifest = {
   "methods": {
     "sync": { "type": "readable" },
@@ -26,7 +25,7 @@ db.on('error', window.location.reload.bind(window.location));
 db = airplanedb(db);
 var remoteDb = multilevel.client(manifest);
 
-var stream = shoe('/airplanedb');
+var stream = Engine('/airplanedb');
 stream.pipe(remoteDb.createRpcStream()).pipe(stream);
 
 var test = require('tape');
