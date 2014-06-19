@@ -71,7 +71,7 @@ function airportdb(db) {
         ;
       });
 
-      var maxTs;
+      var maxTs = '';
       function replicateFrom(item, cb) {
         var ts = item.key.slice(-28, -4);
         var method = item.key.slice(-3);
