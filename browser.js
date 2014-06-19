@@ -71,6 +71,7 @@ function airportdb(db) {
         ;
       });
 
+      var maxTs;
       function replicateFrom(item, cb) {
         var ts = item.key.slice(-28, -4);
         var method = item.key.slice(-3);
@@ -84,7 +85,12 @@ function airportdb(db) {
         function done(err) {
           delete excludeChange[key];
           if (err) return cb(err);
-          lastSync.put(stringRange, ts, cb);
+          if (ts > maxTs) {
+            lastSync.put(stringRange, ts.slice(0, -1) + '\xff', cb);
+            maxTs = ts;
+          } else {
+            cb();
+          }
         }
       }
     }
