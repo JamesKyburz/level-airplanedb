@@ -4,7 +4,7 @@ var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');
 var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json');
-var Engine = require('engine.io-stream');
+var shoe = require('shoe');
 var multilevel = require('multilevel');
 
 var manifest = {
@@ -30,7 +30,7 @@ db.once('error', function(err) {
 db = airplanedb(db);
 var remoteDb = multilevel.client(manifest);
 
-var stream = Engine('/airplanedb');
+var stream = shoe('/airplanedb');
 stream.pipe(remoteDb.createRpcStream()).pipe(stream);
 
 var test = require('tape');

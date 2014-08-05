@@ -52,12 +52,13 @@
     "node": ">=0.10.26"
   },
   "dependencies": {
-    "level-sublevel": "^5.2.0",
-    "monot": "^0.1.2",
-    "map-stream": "~0.1.0",
     "IndexedDBShim": "git://github.com/jameskyburz/IndexedDBShim.git#master",
+    "json-stable-stringify": "^0.1.2",
     "level-delete-range": "^0.1.0",
-    "json-stable-stringify": "^0.1.2"
+    "level-sublevel": "^5.2.0",
+    "map-stream": "~0.1.0",
+    "monot": "^0.1.2",
+    "shoe": "0.0.15"
   },
   "devDependencies": {
     "tape": "^2.12.3",
@@ -67,11 +68,10 @@
     "shoe": "0.0.15",
     "multilevel": "^6.0.0",
     "level-js": "^2.1.3",
-    "leveldown": "^0.10.2",
+    "leveldown-prebuilt": "^0.10.2",
     "rimraf": "^2.2.6",
     "browserify": "^3.44.2",
     "bulkify": "^1.0.0",
-    "tap-browser-color": "^0.1.2",
-    "engine.io-stream": "^0.4.3"
+    "tap-browser-color": "^0.1.2"
   }
 }
