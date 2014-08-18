@@ -10,17 +10,18 @@ module.exports = airportdb;
 
 function airportdb(db) {
   if (db.sync) return db;
+  var removeHook;
+
   db = sublevel(db);
 
   var changelog = db.sublevel('changelog');
   var lastSync  = db.sublevel('lastsync');
 
-  var excludeChange = {};
-
-  db.pre(addChange);
+  function addHook() {
+    if (!removeHook) removeHook = db.pre(addChange);
+  }
 
   function addChange(ch, add) {
-    if (excludeChange[ch.key]) return;
     add({
       key: ch.key,
       value: {
@@ -32,6 +33,11 @@ function airportdb(db) {
   };
 
   db.sync = sync;
+  sync.on = addHook;
+  sync.off = function off() {
+    if (removeHook) removeHook();
+    removeHook = false;
+  }
 
   return db;
 
@@ -44,7 +50,7 @@ function airportdb(db) {
     ;
 
     function error(err) {
-      excludeChange = {};
+      sync.on();
       cb(err);
     }
 
@@ -64,26 +70,31 @@ function airportdb(db) {
     }
 
     function syncFrom() {
+      sync.off();
       lastSync.get(stringRange, function ts(err, from) {
         remotedb.sync(from, range).pipe(map(replicateFrom))
         .on('error', error)
-        .on('end', cb)
+        .on('end', complete)
         ;
       });
 
       var maxTs = '';
+
+      function complete() {
+        sync.on();
+        cb();
+      }
+
       function replicateFrom(item, cb) {
         var ts = item.key.slice(-28, -4);
         var method = item.key.slice(-3);
         var key = item.key.slice(0, -29);
-        excludeChange[key] = true;
         if ('del' === method) {
           db.del(key, done);
         } else {
           db.put(key, item.value, done);
         }
         function done(err) {
-          delete excludeChange[key];
           if (err) return cb(err);
           if (ts > maxTs) {
             lastSync.put(stringRange, ts.slice(0, -1) + '\xff', cb);
