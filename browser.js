@@ -1,6 +1,4 @@
-if (!window.indexedDB) {
-  require('IndexedDBShim/dist/IndexedDBShim.js');
-}
+require('IndexedDBShim/dist/IndexedDBShim.js');
 
 var sublevel  = require('level-sublevel');
 var map  = require('map-stream');
