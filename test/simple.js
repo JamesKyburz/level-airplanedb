@@ -151,6 +151,7 @@ function ready() {
   });
 
   test('cleanup', function(t) {
-    leveljs.destroy('airplanedb', t.end.bind(t));
+    leveljs.destroy('airplanedb', function() {});
+    t.end();
   });
 }
