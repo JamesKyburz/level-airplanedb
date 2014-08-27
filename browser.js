@@ -10,18 +10,36 @@ module.exports = airportdb;
 
 function airportdb(db) {
   if (db.sync) return db;
-  var removeHook;
 
   db = sublevel(db);
 
   var changelog = db.sublevel('changelog');
   var lastSync  = db.sublevel('lastsync');
+  var replicating = {};
+
+  var hook;
 
   function addHook() {
-    if (!removeHook) removeHook = db.pre(addChange);
+    if (!hook) hook = db.pre(addChange);
   }
 
-  function addChange(ch, add) {
+  function removeHook() {
+    if (hook) hook();
+    hook = null;
+  }
+
+  function running() {
+    return !!hook;
+  }
+
+  addHook();
+
+  function addChange(ch, add, batch) {
+    if (ch.key in replicating) {
+      var value = replicating[ch.key];
+      delete replicating[ch.key];
+      if (stringify(ch.value) === stringify(value)) return;
+    }
     add({
       key: ch.key,
       value: {
@@ -33,11 +51,9 @@ function airportdb(db) {
   };
 
   db.sync = sync;
-  sync.on = addHook;
-  sync.off = function off() {
-    if (removeHook) removeHook();
-    removeHook = false;
-  }
+  db.sync.on = addHook;
+  db.sync.running = running;
+  db.sync.off = removeHook;
 
   return db;
 
@@ -45,14 +61,9 @@ function airportdb(db) {
     var stringRange = stringify(range);
     changelog.createReadStream(range)
     .pipe(map(replicateTo))
-    .on('error', error)
+    .on('error', cb)
     .on('end', syncFrom)
     ;
-
-    function error(err) {
-      sync.on();
-      cb(err);
-    }
 
     function replicateTo(item, cb) {
       if (item.value.type === 'del') {
@@ -70,28 +81,24 @@ function airportdb(db) {
     }
 
     function syncFrom() {
-      sync.off();
       lastSync.get(stringRange, function ts(err, from) {
         remotedb.sync(from, range).pipe(map(replicateFrom))
-        .on('error', error)
-        .on('end', complete)
+        .on('error', cb)
+        .on('end', cb)
         ;
       });
 
       var maxTs = '';
-
-      function complete() {
-        sync.on();
-        cb();
-      }
 
       function replicateFrom(item, cb) {
         var ts = item.key.slice(-28, -4);
         var method = item.key.slice(-3);
         var key = item.key.slice(0, -29);
         if ('del' === method) {
+          replicating[key] = undefined;
           db.del(key, done);
         } else {
+          replicating[key] = item.value;
           db.put(key, item.value, done);
         }
         function done(err) {
