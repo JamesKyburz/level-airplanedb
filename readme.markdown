@@ -8,6 +8,8 @@ after the given timestamp.
 
 [![build status](https://secure.travis-ci.org/JamesKyburz/level-airplanedb.svg)](http://travis-ci.org/JamesKyburz/level-airplanedb)
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/level-airplanedb.svg)](https://saucelabs.com/u/level-airplanedb)
+
 # Example client
 
 ``` js
@@ -77,7 +79,7 @@ npm install level-airplanedb
 # test
 
 ```
-npm test
+npm test -- --local
 ```
 
 # license

@@ -6,6 +6,10 @@ require('tap-browser-color')();
 var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');
+var request = require('hyperquest');
+
+var url = window.location.protocol + '//' + window.location.host + '/sequence';
+
 var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json');
 var shoe = require('shoe');
 var multilevel = require('multilevel');
@@ -20,26 +24,31 @@ var manifest = {
   }
 };
 
-var db = levelup('airplanedb', {db: leveljs, valueEncoding: 'json'});
-
-// safari sometimes bombs out with OpenError until that's fixed this on error helps
-db.once('error', function(err) {
-  if (err && 'OpenError' === err.type) {
-    return window.setTimeout(window.location.reload.bind(window.location), 700);
-  } else {
-    throw err;
-  }
-});
-
-var remoteDb = multilevel.client(manifest);
-
-var stream = shoe('/airplanedb');
-stream.pipe(remoteDb.createRpcStream()).pipe(stream);
-
 var test = require('tape');
+var db, name, remoteDb;
 
-db = airplanedb(db);
-db.once('ready', ready);
+request(url, function(err, res) {
+  if (err) return console.error(err);
+  name = res.headers['x-dbname'];
+  db = levelup(name, {db: leveljs, valueEncoding: 'json'});
+
+  // safari sometimes bombs out with OpenError until that's fixed this on error helps
+  db.once('error', function(err) {
+    if (err && 'OpenError' === err.type) {
+      return window.setTimeout(window.location.reload.bind(window.location), 700);
+    } else {
+      throw err;
+    }
+  });
+
+  remoteDb = multilevel.client(manifest);
+
+  var stream = shoe('/' + name);
+  stream.pipe(remoteDb.createRpcStream()).pipe(stream);
+
+  db = airplanedb(db);
+  db.once('ready', ready);
+});
 
 function ready() {
   test('sync on', function(t) {
@@ -151,7 +160,7 @@ function ready() {
   });
 
   test('cleanup', function(t) {
-    leveljs.destroy('airplanedb', function() {});
+    leveljs.destroy(name, function() {});
     t.end();
   });
 }
