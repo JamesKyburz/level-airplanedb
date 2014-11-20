@@ -1,5 +1,12 @@
 ui: tape
 server: ./testserver.js
+capabilities:
+  record-video: false
+  video-upload-on-pass: false
+  record-screenshots: false
+  max-duration: 1800
+  command-timeout: 400
+  idle-timeout: 200
 browsers:
   - name: ie
     version: latest
