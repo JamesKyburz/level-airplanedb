@@ -26,7 +26,7 @@
       "bulkify"
     ]
   },
-  "version": "0.0.14",
+  "version": "0.0.15",
   "scripts": {
     "test": "zuul test/*.js --phantom | faucet",
     "test-browsers": "zuul test/*.js"
