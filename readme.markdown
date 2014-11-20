@@ -79,7 +79,7 @@ npm install level-airplanedb
 # test
 
 ```
-npm test -- --local
+npm test
 ```
 
 # license
