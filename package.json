@@ -44,7 +44,6 @@
     "monot": "^0.1.2"
   },
   "devDependencies": {
-    "browserify": "^6.3.2",
     "bulkify": "^1.0.2",
     "faucet": "0.0.1",
     "function-bind": "^1.0.0",
