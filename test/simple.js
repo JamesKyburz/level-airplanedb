@@ -1,8 +1,6 @@
 // phantomjs it's 2014 and still no bind :(
 Function.prototype.bind = require('function-bind');
 
-require('tap-browser-color')();
-
 var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');

@@ -55,7 +55,6 @@
     "multilevel": "^6.0.1",
     "rimraf": "^2.2.8",
     "shoe": "0.0.15",
-    "tap-browser-color": "^0.1.2",
     "tape": "^3.0.3",
     "zuul": "git://github.com/defunctzombie/zuul.git#master"
   }
