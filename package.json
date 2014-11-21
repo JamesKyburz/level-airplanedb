@@ -37,18 +37,18 @@
   },
   "dependencies": {
     "IndexedDBShim": "git://github.com/jameskyburz/IndexedDBShim.git#master",
-    "json-stable-stringify": "^0.1.2",
+    "json-stable-stringify": "^1.0.0",
     "level-delete-range": "^0.1.0",
     "level-sublevel": "^5.2.0",
-    "map-stream": "~0.1.0",
+    "map-stream": "0.0.5",
     "monot": "^0.1.2"
   },
   "devDependencies": {
     "bulkify": "^1.0.2",
     "faucet": "0.0.1",
-    "function-bind": "^1.0.0",
+    "function-bind": "^1.0.2",
     "hyperquest": "^1.0.1",
-    "level-js": "^2.1.3",
+    "level-js": "^2.1.6",
     "level-proxy": "^1.1.1",
     "leveldown-prebuilt": "^0.10.3",
     "levelup": "^0.19.0",
