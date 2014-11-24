@@ -53,6 +53,7 @@
     "leveldown-prebuilt": "^0.10.3",
     "levelup": "^0.19.0",
     "multilevel": "^6.0.1",
+    "remove-saucelabs-jobs-by-build": "^1.0.0",
     "rimraf": "^2.2.8",
     "shoe": "0.0.15",
     "tape": "^3.0.3",
