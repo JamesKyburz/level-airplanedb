@@ -4,9 +4,9 @@ var sublevel  = require('level-sublevel');
 var map  = require('map-stream');
 var stringify = require('json-stable-stringify');
 
-module.exports = airportdb;
+module.exports = airplanedb;
 
-function airportdb(db) {
+function airplanedb(db) {
   if (db.sync) return db;
 
   db = sublevel(db);
