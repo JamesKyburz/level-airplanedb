@@ -44,19 +44,19 @@
     "monot": "^0.1.2"
   },
   "devDependencies": {
-    "bulkify": "^1.1.0",
+    "bulkify": "^1.1.1",
     "engine.io-stream": "^0.4.3",
     "faucet": "0.0.1",
     "function-bind": "^1.0.2",
     "hyperquest": "^1.0.1",
     "level-js": "^2.1.6",
     "level-proxy": "^1.1.2",
-    "leveldown-prebuilt": "^0.10.3",
+    "leveldown-prebuilt": "^1.0.3",
     "levelup": "^0.19.0",
     "multilevel": "^6.1.0",
     "remove-saucelabs-jobs-by-build": "^1.0.0",
-    "rimraf": "^2.2.8",
-    "tape": "^3.5.0",
-    "zuul": "^1.17.0"
+    "rimraf": "^2.3.2",
+    "tape": "^4.0.0",
+    "zuul": "^2.1.1"
   }
 }
