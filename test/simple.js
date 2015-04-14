@@ -47,7 +47,8 @@ request(url, function(err, res) {
     port: location.port,
     path: '/' + name
   };
-  var stream = engine('/' + name);
+
+  var stream = engine(config);
   stream.pipe(remoteDb.createRpcStream()).pipe(stream);
 
   db = airplanedb(db);
