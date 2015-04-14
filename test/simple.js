@@ -41,6 +41,12 @@ request(url, function(err, res) {
 
   remoteDb = multilevel.client(manifest);
 
+  var config = {
+    transports: ['polling'],
+    hostname: location.hostname,
+    port: location.port,
+    path: '/' + name
+  };
   var stream = engine('/' + name);
   stream.pipe(remoteDb.createRpcStream()).pipe(stream);
 
