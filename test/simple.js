@@ -9,7 +9,7 @@ var request = require('hyperquest');
 var url = window.location.protocol + '//' + window.location.host + '/sequence';
 
 var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json');
-var shoe = require('shoe');
+var engine = require('engine.io-stream');
 var multilevel = require('multilevel');
 
 var manifest = {
@@ -41,7 +41,7 @@ request(url, function(err, res) {
 
   remoteDb = multilevel.client(manifest);
 
-  var stream = shoe('/' + name);
+  var stream = engine('/' + name);
   stream.pipe(remoteDb.createRpcStream()).pipe(stream);
 
   db = airplanedb(db);

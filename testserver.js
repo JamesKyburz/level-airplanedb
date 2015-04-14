@@ -1,6 +1,6 @@
 var multilevel = require('multilevel');
 var http       = require('http');
-var shoe       = require('shoe');
+var engine     = require('engine.io-stream');
 var levelup    = require('levelup');
 var leveldown  = require('leveldown-prebuilt');
 var rimraf     = require('rimraf');
@@ -26,11 +26,11 @@ function setup(name, cb) {
     var db = levelup(name, {valueEncoding: 'json', db: leveldown});
     db = airplanedb(db);
 
-    var sock = shoe(function (stream) {
+    var sock = engine(function (stream) {
       stream.pipe(multilevel.server(db)).pipe(stream);
     });
 
-    sock.install(server, '/' + name);
+    sock.attach(server, '/' + name);
     cb(name);
   });
 }
