@@ -5,6 +5,14 @@ window.onerror = function() {
   console.log.apply(console, arguments);
 };
 
+!function allowIOSHomescreenTesting() {
+  var head = document.querySelector('head');
+  var meta = document.createElement('meta');
+  meta.setAttribute('name', 'apple-mobile-web-app-capable');
+  meta.setAttribute('content', 'yes');
+  head.appendChild(meta);
+}();
+
 var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');
