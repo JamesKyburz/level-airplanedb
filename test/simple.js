@@ -1,6 +1,10 @@
 // phantomjs it's 2014 and still no bind :(
 Function.prototype.bind = require('function-bind');
 
+window.onerror = function() {
+  console.log.apply(console, arguments);
+};
+
 var airplanedb = require('./..');
 var levelup = require('levelup');
 var leveljs = require('level-js');
