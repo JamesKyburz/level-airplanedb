@@ -1,4 +1,8 @@
-require('IndexedDBShim/dist/IndexedDBShim.js');
+require('indexeddbshim/dist/IndexedDBShim.js');
+
+//iOS8 homescreen bug with window.indexedDB readonly and null
+//shimmed mozIndexedDb is picked up by IDBWrapper
+if (!window.indexedDB) window.mozIndexedDB = window.shimIndexedDB;
 
 var sublevel  = require('level-sublevel');
 var map  = require('map-stream');

@@ -36,7 +36,7 @@
     "node": ">=0.10.26"
   },
   "dependencies": {
-    "IndexedDBShim": "git://github.com/jameskyburz/IndexedDBShim.git#master",
+    "indexeddbshim": "^0.1.2",
     "json-stable-stringify": "^1.0.0",
     "level-delete-range": "^0.1.0",
     "level-sublevel": "^5.2.0",
