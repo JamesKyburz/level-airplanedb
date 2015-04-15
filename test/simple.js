@@ -54,6 +54,13 @@ request(url, function(err, res) {
 });
 
 function ready() {
+  test('db error handler called correctly', function(t) {
+    t.plan(1);
+    db.put(null, null, function(err) {
+      t.ok(err, 'error expected for put of a null key');
+    });
+  });
+
   test('sync on', function(t) {
     t.plan(1);
     t.true(db.sync.running(), 'sync is running');
