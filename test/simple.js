@@ -43,8 +43,6 @@ request(url, function(err, res) {
 
   var config = {
     transports: ['polling'],
-    hostname: location.hostname,
-    port: location.port,
     path: '/' + name
   };
 
