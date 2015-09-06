@@ -1,4 +1,4 @@
-require('indexeddbshim/dist/IndexedDBShim.js')
+require('indexeddbshim/dist/indexeddbshim.js')
 
 // iOS8 homescreen bug with window.indexedDB readonly and null
 // shimmed mozIndexedDb is picked up by IDBWrapper
