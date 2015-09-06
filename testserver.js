@@ -2,7 +2,7 @@ var multilevel = require('multilevel');
 var http       = require('http');
 var engine     = require('engine.io-stream');
 var levelup    = require('levelup');
-var leveldown  = require('leveldown-prebuilt');
+var leveldown  = require('leveldown');
 var rimraf     = require('rimraf');
 var airplanedb = require('./');
 
