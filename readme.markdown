@@ -6,6 +6,8 @@ You get a sync method in browserified client to write to the server.
 The server gets a sync method that returns a readstream of the changelog
 after the given timestamp.
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 [![build status](https://secure.travis-ci.org/JamesKyburz/level-airplanedb.svg)](http://travis-ci.org/JamesKyburz/level-airplanedb)
 
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/level-airplanedb.svg)](https://saucelabs.com/u/level-airplanedb)

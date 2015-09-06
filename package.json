@@ -28,7 +28,7 @@
   },
   "version": "1.0.1",
   "scripts": {
-    "test": "zuul test/*.js --phantom | faucet",
+    "test": "standard && zuul test/*.js --phantom | faucet",
     "test-browsers": "remove-saucelabs-jobs-by-build && zuul test/*.js"
   },
   "license": "MIT",
@@ -56,6 +56,7 @@
     "multilevel": "^6.1.0",
     "remove-saucelabs-jobs-by-build": "^1.0.0",
     "rimraf": "^2.4.3",
+    "standard": "^5.2.1",
     "tape": "^4.2.0",
     "zuul": "^3.4.0"
   }
