@@ -36,28 +36,28 @@
     "node": ">=0.10.26"
   },
   "dependencies": {
-    "indexeddbshim": "^2.2.1",
-    "json-stable-stringify": "^1.0.0",
-    "level-delete-range": "^0.1.0",
-    "level-sublevel": "^5.2.3",
+    "indexeddbshim": "2.2.1",
+    "json-stable-stringify": "1.0.0",
+    "level-delete-range": "0.1.0",
+    "level-sublevel": "5.2.3",
     "map-stream": "0.0.6",
-    "monot": "^0.1.2"
+    "monot": "0.1.2"
   },
   "devDependencies": {
-    "bulkify": "^1.1.1",
-    "engine.io-stream": "^0.4.3",
+    "bulkify": "1.1.1",
+    "engine.io-stream": "0.4.3",
     "faucet": "0.0.1",
-    "function-bind": "^1.0.2",
-    "hyperquest": "^1.2.0",
-    "level-js": "^2.2.1",
-    "level-proxy": "^1.1.2",
-    "leveldown": "^1.4.1",
-    "levelup": "^0.19.0",
-    "multilevel": "^6.1.0",
-    "remove-saucelabs-jobs-by-build": "^1.0.0",
-    "rimraf": "^2.4.3",
-    "standard": "^5.2.1",
-    "tape": "^4.2.0",
-    "zuul": "^3.4.0"
+    "function-bind": "1.0.2",
+    "hyperquest": "1.2.0",
+    "level-js": "2.2.2",
+    "level-proxy": "1.1.2",
+    "leveldown": "1.4.1",
+    "levelup": "0.19.0",
+    "multilevel": "6.2.1",
+    "remove-saucelabs-jobs-by-build": "1.0.0",
+    "rimraf": "2.4.3",
+    "standard": "5.3.1",
+    "tape": "4.2.0",
+    "zuul": "3.6.0"
   }
 }
