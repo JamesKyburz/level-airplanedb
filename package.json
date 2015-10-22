@@ -53,7 +53,7 @@
     "level-js": "2.2.2",
     "level-proxy": "1.1.2",
     "leveldown": "1.4.2",
-    "levelup": "0.19.0",
+    "levelup": "1.2.1",
     "multilevel": "6.2.1",
     "remove-saucelabs-jobs-by-build": "1.0.1",
     "rimraf": "2.4.3",
