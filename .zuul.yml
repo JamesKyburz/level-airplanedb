@@ -6,7 +6,7 @@ capabilities:
   record-screenshots: false
 browsers:
   - name: ie
-    version: 10
+    version: 10..latest
   - name: firefox
     version: latest
   - name: chrome
