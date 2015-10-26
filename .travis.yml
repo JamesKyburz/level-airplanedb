@@ -2,8 +2,7 @@ sudo: false
 language: node_js
 bundler_args: --retry 4
 node_js:
-- '0.10'
-- '4.1'
+- '4.2'
 script:
   travis_retry npm run test-browsers
 env:
