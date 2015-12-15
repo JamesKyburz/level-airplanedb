@@ -54,7 +54,7 @@
     "level-proxy": "1.1.2",
     "leveldown": "1.4.2",
     "levelup": "1.3.0",
-    "multilevel": "6.2.1",
+    "multilevel": "7.3.0",
     "rimraf": "2.4.4",
     "remove-saucelabs-jobs-by-build": "1.0.3",
     "standard": "5.4.1",
