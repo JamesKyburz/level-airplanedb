@@ -6,7 +6,7 @@ capabilities:
   record-screenshots: false
 browsers:
   - name: microsoftedge
-    version: 20.10240..latest
+    version: latest
   - name: ie
     version: 10
   - name: firefox
