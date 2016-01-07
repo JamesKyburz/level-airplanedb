@@ -5,6 +5,8 @@ capabilities:
   video-upload-on-pass: false
   record-screenshots: false
 browsers:
+  - name: microsoftedge
+    version: 20.10240..latest
   - name: ie
     version: 10
   - name: firefox
@@ -12,6 +14,6 @@ browsers:
   - name: chrome
     version: latest
   - name: ipad
-    version: 8.0..latest
+    version: 8.4..latest
   - name: iphone
-    version: 8.0..latest
+    version: 8.4..latest
