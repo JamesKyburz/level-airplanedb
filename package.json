@@ -45,7 +45,7 @@
     "monot": "0.1.2"
   },
   "devDependencies": {
-    "bulkify": "1.1.1",
+    "bulkify": "git+ssh://github.com/jameskyburz/bulkify.git#path-transform-fix",
     "engine.io-stream": "0.4.3",
     "faucet": "0.0.1",
     "function-bind": "1.0.2",
