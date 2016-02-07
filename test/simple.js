@@ -13,6 +13,7 @@ window.onerror = function () {
   head.appendChild(meta)
 }())
 
+var path = require('path')
 var airplanedb = require('./..')
 var levelup = require('levelup')
 var leveljs = require('level-js')
@@ -20,7 +21,7 @@ var request = require('hyperquest')
 
 var url = window.location.protocol + '//' + window.location.host + '/sequence'
 
-var fixtures = require('bulk-require')(__dirname + '/fixtures', '*.json')
+var fixtures = require('bulk-require')(path.join(__dirname, '/fixtures'), '*.json')
 var engine = require('engine.io-stream')
 var multilevel = require('multilevel')
 
