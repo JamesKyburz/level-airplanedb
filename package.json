@@ -48,7 +48,7 @@
     "bulkify": "https://github.com/JamesKyburz/bulkify.git#path-transform-fix",
     "engine.io-stream": "0.4.3",
     "faucet": "0.0.1",
-    "function-bind": "1.0.2",
+    "function-bind": "1.1.0",
     "hyperquest": "1.2.0",
     "level-js": "2.2.3",
     "level-proxy": "1.1.2",
