@@ -58,7 +58,7 @@
     "rimraf": "2.5.2",
     "remove-saucelabs-jobs-by-build": "1.0.9",
     "standard": "7.1.2",
-    "tape": "4.5.1",
+    "tape": "4.6.0",
     "zuul": "3.10.1"
   }
 }
