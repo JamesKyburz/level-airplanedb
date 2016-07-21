@@ -6,14 +6,10 @@ capabilities:
   record-screenshots: false
 browsers:
   - name: ie
-    version: 10
+    version: latest
   - name: firefox
     version: latest
   - name: chrome
     version: latest
   - name: safari
     version: latest
-  - name: ipad
-    version: 8.4..latest
-  - name: iphone
-    version: 8.4..latest

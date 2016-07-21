@@ -1,8 +1,8 @@
 sudo: false
 language: node_js
-bundler_args: --retry 4
+bundler_args: --retry 5
 node_js:
-- '5.1.0'
+- '6'
 script:
   travis_retry npm run test-browsers
 env:
