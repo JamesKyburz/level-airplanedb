@@ -5,8 +5,6 @@ capabilities:
   video-upload-on-pass: false
   record-screenshots: false
 browsers:
-  - name: microsoftedge
-    version: latest
   - name: firefox
     version: latest
   - name: chrome
