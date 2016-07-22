@@ -55,6 +55,7 @@
     "leveldown": "1.4.6",
     "levelup": "0.19.0",
     "multilevel": "6.2.1",
+    "rimraf": "2.5.4",
     "remove-saucelabs-jobs-by-build": "1.0.12",
     "rimraf": "2.5.3",
     "standard": "7.1.2",
