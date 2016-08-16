@@ -59,6 +59,6 @@
     "remove-saucelabs-jobs-by-build": "1.0.13",
     "standard": "7.1.2",
     "tape": "4.6.0",
-    "zuul": "3.10.3"
+    "zuul": "3.11.0"
   }
 }
