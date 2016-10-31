@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.26"
+    "node": ">= 4"
   },
   "dependencies": {
     "indexeddbshim": "2.2.1",
