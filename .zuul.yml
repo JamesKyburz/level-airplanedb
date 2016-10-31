@@ -4,6 +4,9 @@ capabilities:
   record-video: false
   video-upload-on-pass: false
   record-screenshots: false
+tunnel:
+  type: ngrok
+  bind_tls: true
 browsers:
   - name: firefox
     version: latest
