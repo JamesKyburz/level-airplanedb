@@ -16,8 +16,6 @@ browsers:
     version: latest
   - name: chrome
     version: latest
-  - name: opera
-    version: latest
   - name: iphone
     version: latest
   - name: android
