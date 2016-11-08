@@ -49,7 +49,7 @@
     "engine.io-stream": "0.4.3",
     "faucet": "0.0.1",
     "function-bind": "1.1.0",
-    "hyperquest": "2.0.0",
+    "hyperquest": "2.1.1",
     "level-js": "2.2.3",
     "level-proxy": "1.1.2",
     "leveldown": "1.4.6",
