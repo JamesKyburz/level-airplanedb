@@ -40,7 +40,7 @@
     "indexeddbshim": "2.2.1",
     "json-stable-stringify": "1.0.1",
     "level-delete-range": "0.1.0",
-    "level-sublevel": "5.2.3",
+    "level-sublevel": "6.5.2",
     "map-stream": "0.0.6",
     "monot": "0.1.2"
   },
