@@ -6,27 +6,25 @@ You get a sync method in browserified client to write to the server.
 The server gets a sync method that returns a readstream of the changelog
 after the given timestamp.
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
-[![build status](https://secure.travis-ci.org/JamesKyburz/level-airplanedb.svg)](http://travis-ci.org/JamesKyburz/level-airplanedb)
-
+[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/feross/standard)
+[![build status](https://api.travis-ci.org/JamesKyburz/level-airplanedb.svg)](https://travis-ci.org/JamesKyburz/level-airplanedb)
+[![npm](https://img.shields.io/npm/v/level-airplanedb.svg)](https://npmjs.org/package/level-airplanedb)
+[![downloads](https://img.shields.io/npm/dm/level-airplanedb.svg)](https://npmjs.org/package/level-airplanedb)
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/level-airplanedb.svg)](https://saucelabs.com/u/level-airplanedb)
 
 # Example client
 
 ``` js
-var levelup = require('levelup');
-var leveljs = require('level-js');
-var airplanedb = require('level-airplanedb');
+const levelup = require('levelup')
+const leveljs = require('level-js')
+const airplanedb = require('level-airplanedb')
 
-var db = levelup('test', {db: leveljs});
-
-db = airplanedb(db);
+const db = airplanedb(levelup('test', {db: leveljs}))
 
 // sync range
 // any keys in local changelog will be written to the server
 // any keys from remotedb will be synced to client
-db.sync({start: ..., end: ...}, remotedb, cb);
+db.sync({start: ..., end: ...}, remotedb, cb)
 
 // changes to local db will be written to changelog removed when synced.
 ```
@@ -34,16 +32,13 @@ db.sync({start: ..., end: ...}, remotedb, cb);
 # Example server
 
 ``` js
-var levelup = require('levelup');
-var leveldown = require('leveldown');
-var airplanedb = require('level-airplanedb');
+const levelup = require('levelup')
+const leveldown = require('leveldown')
+const airplanedb = require('level-airplanedb')
 
-var db = levelup('test', {db: leveldown});
-
-db = airplanedb(db);
+const db = airplanedb(levelup('test', {db: leveldown}))
 
 db.sync(from, range) // readstream of changelog >= from
-
 ```
 
 # Background
