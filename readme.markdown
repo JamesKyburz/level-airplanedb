@@ -1,5 +1,7 @@
 # level-airplanedb
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JamesKyburz/level-airplanedb.svg)](https://greenkeeper.io/)
+
 This module allows you to work offline in the browser using indexdb (+ shim for websql when indexdb not available).
 
 You get a sync method in browserified client to write to the server.
