@@ -57,7 +57,7 @@
     "multilevel": "6.2.1",
     "rimraf": "2.5.4",
     "remove-saucelabs-jobs-by-build": "1.0.16",
-    "standard": "8.6.0",
+    "standard": "16.0.3",
     "tape": "4.6.3",
     "zuul": "3.11.1",
     "zuul-ngrok": "4.0.0"
