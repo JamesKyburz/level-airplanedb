@@ -1,0 +1,23 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: tape
+    versions:
+    - 5.1.1
+    - 5.2.0
+    - 5.2.1
+  - dependency-name: indexeddbshim
+    versions:
+    - 7.0.0
+  - dependency-name: leveldown
+    versions:
+    - 5.6.0
+  - dependency-name: level-js
+    versions:
+    - 5.0.2
